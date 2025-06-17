@@ -53,7 +53,7 @@ public class NavigationTests {
         ConstructorPage constructorPage = new ConstructorPage(driver);
         constructorPage.waitUntilPageLoaded();
         constructorPage.clickSauces();
-        assertTrue("Поле Соусы на экране", constructorPage.isSaucesHeaderDisplayed());
+        assertTrue("Кнопка Соусы была нажата", constructorPage.isSaucesHeaderDisplayed());
     }
 
     @Test
@@ -63,7 +63,7 @@ public class NavigationTests {
         ConstructorPage constructorPage = new ConstructorPage(driver);
         constructorPage.waitUntilPageLoaded();
         constructorPage.clickFillings();
-        assertTrue("Поле Начинки на экране", constructorPage.isFillingsHeaderDisplayed());
+        assertTrue("Кнопка Начинки была нажата", constructorPage.isFillingsHeaderDisplayed());
     }
 
     @Test
@@ -74,7 +74,7 @@ public class NavigationTests {
         constructorPage.waitUntilPageLoaded();
         constructorPage.clickSauces();
         constructorPage.clickBuns();
-        assertTrue("Поле Булки на экране", constructorPage.isBunsHeaderDisplayed());
+        assertTrue("Кнопка Булки была нажата", constructorPage.isBunsHeaderDisplayed());
     }
 
     @After

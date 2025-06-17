@@ -15,11 +15,12 @@ public class ConstructorPage {
     private By enterAccountButton = By.xpath("//*[text()[contains(.,'Войти в аккаунт')]]");
 
     private By bunsButton = By.xpath("//span[text()='Булки']");
-    private By bunsHeader = By.xpath("//h2[text()='Булки']");
+    private By clickedBunsButton = By.xpath("//div[contains(@class, 'tab_tab_type_current__2BEPc') and span[text()='Булки']]");
     private By saucesButton = By.xpath("//span[text()='Соусы']");
-    private By saucesHeader = By.xpath("//h2[text()='Соусы']");
+    private By clickedSaucesButton = By.xpath("//div[contains(@class, 'tab_tab_type_current__2BEPc') and span[text()='Соусы']]");
     private By fillingsButton = By.xpath("//span[text()='Начинки']");
-    private By fillingsHeader = By.xpath("//h2[text()='Начинки']");
+    private By clickedFillingsButton = By.xpath("//div[contains(@class, 'tab_tab_type_current__2BEPc') and span[text()='Начинки']]");
+
 
     public ConstructorPage(WebDriver driver) {
         this.driver = driver;
@@ -52,7 +53,7 @@ public class ConstructorPage {
     public boolean isBunsHeaderDisplayed() {
         try {
             wait.withTimeout(Duration.ofSeconds(3))
-                    .until(ExpectedConditions.visibilityOfElementLocated(bunsHeader));
+                    .until(ExpectedConditions.visibilityOfElementLocated(clickedBunsButton));
             return true;
         } catch (Exception e) {
             return false;
@@ -66,7 +67,7 @@ public class ConstructorPage {
     public boolean isSaucesHeaderDisplayed() {
         try {
             wait.withTimeout(Duration.ofSeconds(3))
-                    .until(ExpectedConditions.visibilityOfElementLocated(saucesHeader));
+                    .until(ExpectedConditions.visibilityOfElementLocated(clickedSaucesButton));
             return true;
         } catch (Exception e) {
             return false;
@@ -80,7 +81,7 @@ public class ConstructorPage {
     public boolean isFillingsHeaderDisplayed() {
         try {
             wait.withTimeout(Duration.ofSeconds(3))
-                    .until(ExpectedConditions.visibilityOfElementLocated(fillingsHeader));
+                    .until(ExpectedConditions.visibilityOfElementLocated(clickedFillingsButton));
             return true;
         } catch (Exception e) {
             return false;
