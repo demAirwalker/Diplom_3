@@ -47,15 +47,32 @@ public class NavigationTests {
     }
 
     @Test
-    @Description("Проверка кнопок навигации конструктора")
-    public void navConstructorTest() {
+    @Description("Проверка кнопки Соусы")
+    public void navConstructorSaucesTest() {
         driver.get("https://stellarburgers.nomoreparties.site/");
         ConstructorPage constructorPage = new ConstructorPage(driver);
         constructorPage.waitUntilPageLoaded();
         constructorPage.clickSauces();
         assertTrue("Поле Соусы на экране", constructorPage.isSaucesHeaderDisplayed());
+    }
+
+    @Test
+    @Description("Проверка кнопки Начинки")
+    public void navConstructorFillingsTest() {
+        driver.get("https://stellarburgers.nomoreparties.site/");
+        ConstructorPage constructorPage = new ConstructorPage(driver);
+        constructorPage.waitUntilPageLoaded();
         constructorPage.clickFillings();
         assertTrue("Поле Начинки на экране", constructorPage.isFillingsHeaderDisplayed());
+    }
+
+    @Test
+    @Description("Проверка кнопки Булки")
+    public void navConstructorBunsTest() {
+        driver.get("https://stellarburgers.nomoreparties.site/");
+        ConstructorPage constructorPage = new ConstructorPage(driver);
+        constructorPage.waitUntilPageLoaded();
+        constructorPage.clickSauces();
         constructorPage.clickBuns();
         assertTrue("Поле Булки на экране", constructorPage.isBunsHeaderDisplayed());
     }
